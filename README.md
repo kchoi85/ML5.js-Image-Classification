@@ -10,6 +10,7 @@ React.useEffect(() => {
   setDom(document.getElementById("image"));
   if (dom) {
     classifier.predict(dom, 5, (err, results) => {
+      if (err) return;
       setPredictions(results);
     });
   }
